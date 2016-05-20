@@ -46,7 +46,7 @@ body {
 .reveal h4,
 .reveal h5,
 .reveal h6 {
-  margin: 0 0 20px 0;
+  margin: 0 0 15px 0;
   color: #333;
   font-family: "Quicksand", sans-serif;
   font-weight: normal;
@@ -66,7 +66,7 @@ body {
   font-size: 1.55em; }
 
 .reveal h4 {
-  font-size: 1em; }
+  font-size: 0.75em; }
 
 .reveal h1 {
   text-shadow: none; }
