@@ -17,7 +17,6 @@
         <!-- Code syntax highlighting -->
         <link rel="stylesheet" href="lib/css/zenburn.css">
 
-
         <!--[if lt IE 9]>
         <script src="lib/js/html5shiv.js"></script>
         <![endif]-->
@@ -127,11 +126,12 @@
                             suggesting a marketplace for loans (for all states except Maine, Iowa, and North Dakota.).
                             They charge borrowers a fee to take out a loan, calling it a <em>closing fee</em>
                             (for most loans the fee is 5% of the loan amount).
-                            <br /><br />
+                            <br />
+                            <br />
                             The story that this visualization focuses on is the evolution of Proper Marketplace's portfolio of loans over its first 8 year.
-                            Beginning with the type of loans that it offered, their geographic location, and the status of those loans - whether they defaulted or 
+                            Beginning with the type of loans that it offered, their geographic location, and the status of those loans - whether they defaulted or
                             were complete successfully
-                            - shown in the first three slides, the visualization then focuses on the changing yields on those loans (in aggregate) as the company 
+                            - shown in the first three slides, the visualization then focuses on the changing yields on those loans (in aggregate) as the company
                             moved from a startup to a company that orchestrates hundreds of millions of dollars in loans.
 
                         </p>
@@ -444,25 +444,28 @@
                                                 <h3>Prosper Loan Data</h3>
                                             </div>
                                             <p class="innerText">
-                                                <span style="font-size: 18px">Estimated Actual Yield By Credit Rating, Monthly with Aggregate Loan Amount </span>
+                                                <span style="font-size: 16px">Estimated Actual Yield By Credit Rating, Monthly with Aggregate Loan Amount </span>
                                                 <br />
                                                 <br />
                                                 As we have seen, Prosper facilitated a total of &#36;949,894,300 in loans, mainly to refinance debt.
-                                                <br />
                                                 Each loan created has a stated Lender's Yield. In this section, the actual Lender's Yield is estimated.
                                                 <br />
                                                 <br />
-                                                Estimating the actual Lender's Yield implies using only loans that are not current, which summed to &#36;363,719,700
+                                                Estimating the actual Lender's Yield implies using only loans that are not current, which summed to &#36;363,719,700.
+                                                As can be seen in the 2nd visualization, this means that the estimated yield for more recent years is based
+                                                on a smaller and small proportion of loans (and so cannot be considered to be a true reflection of the yield for the
+                                                the relevant portfolio of loans displayed for those years). The 2nd visualization also highlights that the
+                                                relative proportion of completed to defaulted loans closely tracks the estimated yield.
                                                 <br />
                                                 <br />
                                                 Customer payments, for loans that were not current, were &#36;335,204,900, which suggests a gross
-                                                (non-annualized) return of -7.84&#37;, or -3.97&#37; when recovery is included. Pre-2009, including recovery,
+                                                (non-annualized) return of -7.84&#37; (or -3.97&#37; when recovery is included). Pre-2009, including recovery,
                                                 there was a gross return of -5.73&#37; (on &#36;178,560,500 of loans).
                                                 <br />
                                             </p>
 
                                             <p class="innerText">
-                                                <span style="font-size: 18px">Calculation of accumulated return (<em>r</em>) and annualized return (<em>r<sub>a</sub></em>). </span>
+                                                <span style="font-size: 16px">Calculation of accumulated return (<em>r</em>) and annualized return (<em>r<sub>a</sub></em>). </span>
                                                 <br />
                                                 <br />
                                                 For each subset of data in the visualization, the annualized return  (<em>r<sub>a</sub></em>), is calculated as:
@@ -475,20 +478,10 @@
                                                     \end{array} $$
                                                 </div>
                                             </p>
-
-                                            <p class="innerText">
-
-                                                Principal Recovery: Is estimated from the difference between Gross Principal Loss and Net Principal Loss.
-                                                <br />
-                                                Service Fees: Cumulative service fees paid by the investors who have invested in the loan.
-                                                <br />
-                                                Collection Fees: Cumulative collection fees paid by the investors who have invested in the loan.
-                                                <br />
-                                            </p>
                                             <hr>
 
                                             <p class="innerText">
-                                                <span style="font-size: 18px">Visualization Instructions. </span>
+                                                <span style="font-size: 16px">Visualization Instructions. </span>
                                                 <ul class="innerList">
                                                     <li>
                                                         Click the buttons to change the axis.
