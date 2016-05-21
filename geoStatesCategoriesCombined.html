@@ -16,9 +16,13 @@
         <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/>
         <link href="http://rawgithub.com/Caged/d3-tip/master/examples/example-styles.css" rel="stylesheet" type="text/css"/>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-        <link href="css/video_test.css" rel="stylesheet" type="text/css"/>
+        <link href="vizCSS/video_test.css" rel="stylesheet" type="text/css"/>
 
         <style type="text/css">
+            body {
+                font-family: Open Sans, Verdana, Arial, sans-serif;
+            }
+
             #button1 {
                 display: inline-block;
                 margin: 0px 15px 0px 15px;
@@ -35,18 +39,15 @@
                 height: 90vh !important;
             }
             #container {
-                height: 90%;
-                max-height: 90%;
+                margin: auto;
+                height: 100%;
+                max-height: 100%;
                 margin-top: 0;
             }
 
             #centerwrapper {
                 margin: auto;
-                width: 90%;
-            }
-
-            body {
-                font-family: Open Sans, Verdana, Arial, sans-serif;
+                width: 100%;
             }
 
             .wrapper {
@@ -60,8 +61,10 @@
             }
 
             #mainWrapper {
-                width: 70%;
-                margin: auto;
+                height: 100%;
+                width: 55%;
+                margin: 0 auto;
+                margin-top: 15px;
             }
 
             #intro {
@@ -92,17 +95,7 @@
             path.unit:hover {
                 fill: #666 !important;
             }
-            tooltip {
-                background-color: red !important;
-                margin: 10px;
-                height: 200px;
-                width: 150px;
-                padding-left: 10px;
-                padding-top: 10px;
-                -webkit-border-radius: 10px;
-                -moz-border-radius: 10px;
-                border-radius: 10px;
-            }
+
         </style>
     </head>
     <body>
@@ -150,7 +143,7 @@
                         </div>
                     </center>
                 </div>
-                <div id="mainWrapper" style="margin-top:15px">
+                <div id="mainWrapper">
 
                 </div>
 
@@ -174,7 +167,7 @@
             var altVersion = true;
 
             var div = d3.select("#mainWrapper");
-            var svg = div.append("svg").attr("id", "map13").attr("height", 500).attr("width", 960);
+            var svg = div.append("svg").attr("id", "map13").attr("height", "100%").attr("width", "100%");
             var div = d3.select("svg").append("div").attr("class", "tooltip").style("opacity", 1);
 
             var debt = function() {

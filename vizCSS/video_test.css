@@ -33,10 +33,10 @@ body {
 
 #myFooter {
     position: fixed;
-    right: 0;
+    right: -10%;
     bottom: 0;
     width: 140%;
-    line-height: 3;
+    line-height: 2;
     text-align: center;
     color: black;
     font-size: 12px;
@@ -82,8 +82,8 @@ body {
     padding 5px;
 }
 .menuout {
-    position: relative;
-    left: -2%;padding 5px;
+    position: fixed;
+    left: -13%;padding 0;
     top: 0;
     width: 150%; /* Change to 100% if, on hover, menuout does not move */
     font-size: 20px !important;
@@ -91,16 +91,17 @@ body {
     color: #A9A9A9;
     /* background-color: rgba(173,217,228,0.1);  rgb for "GoldenRod" with an opacity measure */
     z-index: 2;
-    -webkit-border-radius: 5px 0 0 5px;
-    -moz-border-radius: 5px 0 0 5px;
-    border-radius: 5px 0 0 5px;
-    background: -webkit-linear-gradient(right, rgba(173,217,228,0.2), rgba(173,217,228,0)); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(right, rgba(173,217,228,0.2), rgba(173,217,228,0)); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(right, rgba(173,217,228,0.2), rgba(173,217,228,0)); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to right, rgba(173,217,228,0.2), rgba(173,217,228,0)); /* Standard syntax (must be last) */
-    -webkit-box-shadow: 5px 5px 3px rgba(0,0,0,0.2);
-    -moz-box-shadow: 5px 5px 3px rgba(0,0,0,0.2);
-    box-shadow: 5px 5px 3px rgba(0,0,0,0.2);
+    /*
+     -webkit-border-radius: 5px 0 0 5px;
+     -moz-border-radius: 5px 0 0 5px;
+     border-radius: 5px 0 0 5px;
+     background: -webkit-linear-gradient(right, rgba(173,217,228,0.2), rgba(173,217,228,0)); */ /* For Safari 5.1 to 6.0 */
+    /* background: -o-linear-gradient(right, rgba(173,217,228,0.2), rgba(173,217,228,0)); */ /* For Opera 11.1 to 12.0 */
+    /* background: -moz-linear-gradient(right, rgba(173,217,228,0.2), rgba(173,217,228,0)); */ /* For Firefox 3.6 to 15 */
+    /* background: linear-gradient(to right, rgba(173,217,228,0.2), rgba(173,217,228,0)); */ /* Standard syntax (must be last) */
+    /* -webkit-box-shadow: 5px 5px 3px rgba(0,0,0,0.2);
+     moz-box-shadow: 5px 5px 3px rgba(0,0,0,0.2);
+     box-shadow: 5px 5px 3px rgba(0,0,0,0.2); */
 }
 /*
  .menuout #menuout0 {
@@ -122,10 +123,11 @@ body {
     position: fixed; /* The overlays the inner menu over the page */
     display: block;
     top: 0%;
-    right: -140%; /* default is for the page to be off-screen */
+    right: -150%; /* default is for the page to be off-screen */
     color: black;
-    width: 120%;
+    width: 130%;
     height: 100%;
+    font-size:16px;
     z-index: 3;
     text-align: left;
     -webkit-border-radius: 10px 0 0 10px; /* rounded corners */
@@ -149,7 +151,7 @@ body {
 /************************************/
 /* This is where the action happens */
 .menuout .menuout_inner {
-    right: -140%; /* default is for the page to be off-screen */
+    right: -150%; /* default is for the page to be off-screen */
     -webkit-transition: right 0.5s ease !important;
     -moz-transition: right 0.5s ease !important;
     -o-transition: right 0.5s ease !important;

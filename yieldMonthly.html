@@ -68,6 +68,7 @@
                 height = 900 - margin;
 
             var svg = dimple.newSvg("#chartContainer", "100%", "100%");
+
             d3.csv("vizData/tabledataMonthYield.csv", function(data) {
                 //fiters the data by year
                 data = dimple.filterData(data, "Credit Rating", ["AA", "A", "B", "C", "D", "E", "HR", "NC"]);
@@ -145,6 +146,7 @@
                 /*
                 var myLegend = myChart.addLegend("70px", "20px", "20px", "100px", 'left', [series]);
                 */
+               
                 /*
                 myChart.assignColor("AA", "#377eb8");
                 myChart.assignColor("A", "#e41a1c");
@@ -217,8 +219,7 @@
                             return (d.y === e ? indicatorColor.stroke : defaultColor.stroke)
                         });
                         // Change Orientation of xticks
-                        myChart.axes[0].shapes.call(d3.svg.axis().orient("bottom").scale(myChart.axes[0]._scale))
-                        .selectAll("text").style("text-anchor", "end").attr("dx", "-0.5em").attr("dy", "0.5em").attr("transform", "rotate(-45)")
+                        myChart.axes[0].shapes.call(d3.svg.axis().orient("bottom").scale(myChart.axes[0]._scale)).selectAll("text").style("text-anchor", "end").attr("dx", "-0.5em").attr("dy", "0.5em").attr("transform", "rotate(-45)")
                         /*myLegend.height = 500;*/
                     }
                     firstTick = false;
@@ -226,8 +227,7 @@
                     // Change Order of Categories in Legend
 
                 };
-                myChart.axes[0].shapes.call(d3.svg.axis().orient("bottom").scale(myChart.axes[0]._scale))
-                .selectAll("text").style("text-anchor", "end").attr("dx", "-0.5em").attr("dy", "0.5em").attr("transform", "rotate(-45)")
+                myChart.axes[0].shapes.call(d3.svg.axis().orient("bottom").scale(myChart.axes[0]._scale)).selectAll("text").style("text-anchor", "end").attr("dx", "-0.5em").attr("dy", "0.5em").attr("transform", "rotate(-45)")
                 /*
                  myChart.axes[0].shapes.call(d3.svg.axis().orient("bottom").scale(myChart.axes[0]._scale).tickValues(data.map(function(d, i) {
                  return d3.time.format("%B-%Y").parse(d.Date)
