@@ -83,7 +83,8 @@ body {
 }
 .menuout {
     position: fixed;
-    left: -13%;padding 0;
+    left: -13%;
+    padding 0;
     top: 0;
     width: 150%; /* Change to 100% if, on hover, menuout does not move */
     font-size: 20px !important;
@@ -102,20 +103,6 @@ body {
     /* -webkit-box-shadow: 5px 5px 3px rgba(0,0,0,0.2);
      moz-box-shadow: 5px 5px 3px rgba(0,0,0,0.2);
      box-shadow: 5px 5px 3px rgba(0,0,0,0.2); */
-}
-/*
- .menuout #menuout0 {
- top: 65%;
- }
- */
-.menuout:hover {
-    right: 0%; /* Change to 0 for none-sliding, Change to 50% for sliding off page */
-    background-color: rgba(173,217,228,0.9); /* rgb for "GoldenRod" with an opacity measure */
-    background: linear-gradient(to bottom right, #add9e4, rgba(0,0,0,0));
-    -webkit-transition: all 15s ease !important;
-    -moz-transition: all 15s ease !important;
-    -o-transition: all 15s ease !important;
-    transition: all 15s ease !important;
 }
 
 /* Menu Slide In Area */
@@ -141,12 +128,6 @@ body {
     background: linear-gradient(to bottom right, rgba(173,217,228,1), rgba(173,217,228,0.9)); /* Standard syntax (must be last) */
 }
 
-.menuout_inner:hover {
-    /*
-     position: fixed; *//* move from off screen -51% to on screen 0 */
-
-    margin-right: 0;
-}
 
 /************************************/
 /* This is where the action happens */
@@ -210,7 +191,7 @@ p.innerText {
 
 .prosper {
     margin: 0 auto !important;
-    width: 55% !important;
+    width: 54% !important;
 }
 
 .icon {
