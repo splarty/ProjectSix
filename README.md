@@ -70,7 +70,7 @@ _______________________________________________________
 
 Include all feedback you received from others on your visualization from the first sketch to the final visualization
 <ol>
-<li> Sheng_KungUdacity Coach
+<li> Sheng_Kung Udacity Coach
 <ul>
 <li>The visualizations you've built are nice from a technical perspective, but I think more work needs to be done to better convey the story you want to tell. Many of the visualizations in the presentation lean too far in the exploration direction, so some additional guidance or focus is suggested to make them more explanatory in nature. You can allow readers the ability to explore your visualizations, but the first thing that you need to show your reader for each figure is the main point of why that visualization is useful to look at. Another thing that can help here is to use the text in your "Details" sidebar to explicitly note the main point of each visualization.
 
@@ -90,7 +90,7 @@ Include all feedback you received from others on your visualization from the fir
 
 <li>I don't really have any specific things to note about the fourth and fifth plots, but it is perhaps because I do not have a good idea of what the main story being told is. I think that the earlier suggestions for trying to focus the visualizations and to provide more directed commentary in the "Details" sidebox will be useful for helping the reader understand the significance of what is being plotted. This post is already getting long enough, so I think I'll just leave my commentary as it stands here.
 </ul>
-<li> sathya_67045301587081d
+<li> sathya_67045301587081d Udacity Peer
 My Feedback
 <ol>
 <li> Overall nice animation depicting the loans over the years for various states
