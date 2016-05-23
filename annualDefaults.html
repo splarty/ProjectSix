@@ -3,9 +3,13 @@
     <head>
         <meta charset="utf-8">
 
-        <script src="http://d3js.org/d3.v3.min.js"></script><script src="http://dimplejs.org/dist/dimple.v2.1.2.min.js"></script>
+        <!-- d3.js & dimple.js -->
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+        <script src="http://dimplejs.org/dist/dimple.v2.1.2.min.js"></script>
+        <!-- font awesome CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
+        <!-- annualDefault.html CSS  -->
         <style type="text/css">
             h1 {
                 text-align: center;
@@ -24,7 +28,6 @@
                 display: inline-block;
                 margin: 0px 15px 0px 15px;
                 border: solid 2px black;
-                /*border-radius: 10px;*/
                 width: 105px;
                 text-align: center;
                 padding: 5px;
@@ -40,10 +43,10 @@
                 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
             }
         </style>
-        <title>Defaults</title>
+        <title>Loan Status</title>
     </head>
     <body>
-
+        <!-- Title Header, Buttons & Chart Div  -->
         <h1 align="center">Prosper Loans: Loan Status By Year</h1>
         <div class="centerIsh" style="text-align:center;">
             <button id='btn' class="buttonShadow button1">
@@ -57,12 +60,9 @@
         </div>
         <div id='chartContainer'  style="height: 80vh"></div>
 
+        <!-- Visualization JavaScript  -->
         <script type="text/javascript">
             //creates the chart container
-            var margin = 175,
-                width = 1024 - margin,
-                height = 900 - margin;
-
             var svg = dimple.newSvg("#chartContainer", "100%", "100%");
             d3.csv("vizData/tableDefaultTotal.csv", function(data) {
                 //fiters the data by year
@@ -115,25 +115,26 @@
 
                 // Manually set the bar colors
                 s.shapes.attr("rx", 10).attr("ry", 10).style("fill", function(d) {
-                    return (d.y === '2006' ? indicatorColor.fill : defaultColor.fill)
+                    return (d.y === '2006' ? indicatorColor.fill : defaultColor.fill);
                 }).style("stroke", function(d) {
-                    return (d.y === '2006' ? indicatorColor.stroke : defaultColor.stroke)
+                    return (d.y === '2006' ? indicatorColor.stroke : defaultColor.stroke);
                 }).style("opacity", 0.4);
 
-                //This creates a new dimple chart by combing data with the chart
+                // Creates a new dimple chart by combining data with the chart
                 var myChart = new dimple.chart(svg, data);
                 myChart.setMargins("160px", "50px", "160px", "170px");
+                
                 //Add category bars to bar chart
                 var x = myChart.addCategoryAxis("x", "Loan Status");
                 x.addOrderRule("Loan Status", false);
                 //adds the 'measure' for the bar chart (not sure why no var y)
                 var y = myChart.addMeasureAxis("y", 'Value');
                 var z = myChart.addMeasureAxis("z", 'Count');
-                //This creates and identifies it has a bar chart (extra grouping, what chart)
+                // Create and identifies it has a bar chart (extra grouping, what chart)
                 var series = myChart.addSeries('Loan Status', dimple.plot.bubble);
-
+                // Create the legend
                 var myLegend = myChart.addLegend("10px", "30px", "200px", "500px", 'left', series);
-
+                // Manually set the legend colors
                 myChart.assignColor("Completed", "#377eb8");
                 myChart.assignColor("Cancelled", "black");
                 myChart.assignColor("Current", "#e41a1c");
@@ -142,8 +143,6 @@
                 myChart.assignColor("Past Due > 120 Days", "#984ea3");
                 myChart.assignColor("Final Payment", "#ff7f00");
 
-                //myLegend.height = 2000;
-
                 // Add a storyboard to the main chart and set the tick event
                 var story = myChart.setStoryboard("Year", onTick);
                 // Change the frame duration
@@ -151,6 +150,7 @@
                 // Order the storyboard by date
                 story.addOrderRule("Year");
 
+                // Manually set the legend order
                 myLegend._getEntries = function() {
                     var orderedValues = ["Cancelled", "Completed", "Current",  "Defaulted/Charged Off", "Final Payment", "Past Due < 120 Days", "Past Due > 120 Days"];
                     var entries = [];
@@ -191,32 +191,34 @@
 
                 // On tick of the main charts storyboard
                 function onTick(e) {
-                    console.log(e)
                     if (!firstTick) {
                         // Color all shapes the same
                         s.shapes.transition().duration(frame / 2).style("fill", function(d) {
-                            return (d.y === e ? indicatorColor.fill : defaultColor.fill)
+                            return (d.y === e ? indicatorColor.fill : defaultColor.fill);
                         }).style("stroke", function(d) {
-                            return (d.y === e ? indicatorColor.stroke : defaultColor.stroke)
+                            return (d.y === e ? indicatorColor.stroke : defaultColor.stroke);
                         });
-                        // Change Orientation of xticks
+                        // Manually hange Orientation of xticks
                         myChart.axes[0].shapes.call(d3.svg.axis().orient("bottom").scale(myChart.axes[0]._scale))
-                        .selectAll("text").style("text-anchor", "end").attr("dx", "0.5em").attr("dy", "3.5em").attr("transform", "rotate(-70)")
-                        //myLegend.height = 500;
+                        .selectAll("text").style("text-anchor", "end").attr("dx", "0.5em").attr("dy", "3.5em").attr("transform", "rotate(-70)");
                     }
                     firstTick = false;
 
                 };
+                        // Manually hange Orientation of xticks
                 myChart.axes[0].shapes.call(d3.svg.axis().orient("bottom").scale(myChart.axes[0]._scale))
-                .selectAll("text").style("text-anchor", "end").attr("dx", "0.5em").attr("dy", "3.5em").attr("transform", "rotate(-70)")
-                
+                .selectAll("text").style("text-anchor", "end").attr("dx", "0.5em").attr("dy", "3.5em").attr("transform", "rotate(-70)");
+
+                 // Create eventhandlers for Buttons
                 d3.select("#btn").on("click", function() {
 
+                    // Fixed y axis
                     y.overrideMax = 350000000;
                     myChart.draw(800);
                 });
                 d3.select("#btn1").on("click", function() {
 
+                    // Variable y axis
                     y.overrideMax = null;
                     myChart.draw(800);
                 });
