@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Prosper Visualization</title>
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+        <!-- Reveal -->
+        <link rel="stylesheet" href="css/revealMine.css">
+        <link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+        <!-- Reveal ode syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <!-- Latex  -->
+        <!-- JS  -->
+        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"  type="text/javascript"></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['#','#'], ['\\(','\\)']]}});
+        </script>
+
+        <!-- CSS  -->
+        <link href="vizCSS/video_test.css" rel="stylesheet" type="text/css"/>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+        <!-- index.html CSS  -->
+        <style type="text/css">
+            .reveal section > iframe {
+                max-width: 100% !important;
+                min-width: 100% !important;
+                max-height: 100% !important;
+                min-height: 100% !important;
+            }
+            .reveal h1, h2, h3, h4 {
+                margin-top: 0 !important;
+            }
+            .reveal h4 {
+                margin: 0 !important;
+            }
+            p.innerTextMain {
+                font-size: 18px !important;
+            }
+            p.innerText {
+                margin: 5px !important;
+                font-size: 14px !important;
+            }
+            p.innerText1 {
+                font-size: 14px !important;
+                text-align: justify;
+            }
+            .reveal ul.innerList {
+                margin: 5px 5px 0 2px !important;
+            }
+            .reveal ol.innerList {
+                margin: 5px 5px 0 2px !important;
+            }
+            ul.innerList > li {
+                margin: 5px 5px 0 0 !important;
+                font-size: 12px !important;
+            }
+            ol.innerList > li {
+                margin: 5px 5px 0 0 !important;
+                font-size: 12px !important;
+                padding: 2px !important;
+            }
+            p.innerText ul {
+                margin: 0 0 0 0 !important;
+                font-size: 14px !important;
+            }
+            p.innerText span {
+                margin: 0 0 0 0 !important;
+                padding: 0 0 0 0 !important;
+            }
+
+            div.whiteBG {
+                background: white;
+                margin: 0 0 0 0 !important;
+                font-size: 14px !important;
+            }
+            .prosper1 {
+                height: 55px !important;
+                width: 50px !important;
+                border: 0 !important;
+                display: inline-block !important;
+                vertical-align: middle !important;
+            }
+            /* Menu Slide In Area Link*/
+            .menuout1 {
+                position: fixed;
+                left: 90%;
+                margin: 0 10% 0 10%;
+                padding: 0 10% 0 10%;
+                top: -1%;
+                width: 30%; /* Change to 100% if, on hover, menuout does not move */
+                font-size: 14px !important;
+                text-align: left;
+                color: #A9A9A9;
+                z-index: 2;
+            }
+            .menuout1:hover {
+                left: 90%; /* Change to 0 for none-sliding, Change to 50% for sliding off page */
+            }
+
+            /* Menu Slide In Area */
+            .menuout_inner1 {
+                position: fixed; /* The overlays the inner menu over the page */
+                display: block;
+                top: 0%;
+                left: -140%; /* default is for the page to be off-screen */
+                color: black;
+                width: 110%;
+                height: 100vh;
+                font-size: 16px;
+                z-index: 3;
+                text-align: left;
+                -webkit-border-radius: 10px 0 0 10px; /* rounded corners */
+                -moz-border-radius: 10px 0 0 10px;
+                border-radius: 10px 0 0 10px;
+                -moz-box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
+                box-shadow: 5px 5px 3px rgba(0,0,0,0.5);
+                background: -webkit-linear-gradient(to bottom right, rgba(173,217,228,1), rgba(173,217,228,0.9)); /* For Safari 5.1 to 6.0 */
+                background: -o-linear-gradient(to bottom right, rgba(173,217,228,1), rgba(173,217,228,0.9)); /* For Opera 11.1 to 12.0 */
+                background: -moz-linear-gradient(to bottom right, rgba(173,217,228,1), rgba(173,217,228,0.9)); /* For Firefox 3.6 to 15 */
+                background: linear-gradient(to bottom right, rgba(173,217,228,1), rgba(173,217,228,0.9)); /* Standard syntax (must be last) */
+            }
+
+            .menuout1 .menuout_inner1 {
+                left: -140%; /* default is for the page to be off-screen */
+                -webkit-transition: left 2s ease !important;
+                -moz-transition: left 2s ease !important;
+                -o-transition: left 2s ease !important;
+                transition: left 2s ease !important;
+            }
+
+            .menuout1:hover .menuout_inner1 {
+                left: -19%;/* move from off screen -51% to on screen 0 */
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Title Page -->
+            <div class="slides">
+                <section>
+                    <div>
+                        <h3> Prosper Visualization </h3>
+                        <img class="prosper" src="img/prosper.jpg" />
+                        <p class="innerText1">
+                            Prosper Marketplace, Inc. is a San Francisco, California-based company in the peer-to-peer lending industry.
+                            The company operates Prosper.com, a website where individuals can either invest in personal loans or request to borrow money.
+                            It offers unsecured personal loans up to $35,000 at rates that depend on the borrower's credit rating.
+                            Each loan is typically funded by multiple people,
+                            suggesting a marketplace for loans (for all states except Maine, Iowa, and North Dakota.).
+                            They charge borrowers a fee to take out a loan, calling it a <em>closing fee</em>
+                            (for most loans the fee is 5% of the loan amount).
+                            <br />
+                            <br />
+                            The story that this visualization focuses on is the remarkable evolution of Proper Marketplace's portfolio of loans over its first 8 year:
+                            Beginning with the <strong>type of loans</strong> that it offered, their value, and their geographic location, the visualization then focuses on the
+                            the <strong>pattern of yields</strong> on those loans, in aggregate, (as well as the status of those loans - whether they defaulted or
+                            were completed successfully) as the company moved from being a startup to a company that orchestrates
+                            hundreds of millions of dollars in loans.
+
+                        </p>
+                        <h4> Visualization Instructions </h4>
+                        <p class="innerText1">
+                            Use the control icon, at the bottom of the screen, to move between pages.
+
+                            Each visualization, including this page, has a separate description which is available on each page by hovering over
+                            the <span style="font-size: 16px !important; text-align: justify;
+                            color: #A9A9A9;"> <i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;Details </span> keyword.
+                        </p>
+                        <!-- Menu Out - Title Page Details-->
+                        <div class="nameIt">
+                            <div id="menuout0" class="menuout">
+                                <p class="myText">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;Details
+                                </p>
+                                <div class="menuout_inner">
+                                    <div class="menuout_inner_text">
+                                        <p class="innerText">
+                                            <div id="intro">
+                                                <div id="introLine">
+                                                    <h3>Prosper Loan Data</h3>
+                                                </div>
+                                                <p class="innerText">
+                                                    The data used in this visualization comprises 113,937 observations, which represent individual loans, spanning 2005-11-09 to 2014-03-10.
+                                                    For each loan there are 81 variables, including information on: Loan Origination Date; Loan Origination Amount;
+                                                    Multiple variables describing the borrower (including credit rating, occupation, income, employment status);
+                                                    Multiple variables describing the rate of return/payments on the loan (i.e. from both the borrowers and investors perspective);
+                                                    and Multiple variables describing the current state of the loan (including deliquency, default, charge-off, closed).
+                                                    <br />
+                                                    <br />
+                                                    The first loan origination was on the 15th of September, 2005.
+                                                    The total dollar value of loans issued, over the time period of the dataset, was &#36;949,894,347, or just under &#36;1 billion.
+                                                    The average loan issued was &#36;8,339
+                                                    <br />
+                                                    <br />
+                                                    Company Information Relevant to Data Analysis:
+                                                    <br />
+                                                    “On November 24, 2008, the SEC found Prosper to be in violation of the Securities Act of 1933.
+                                                    As a result of these findings, the SEC imposed a cease and desist order on Prosper
+                                                    … In July 2009, Prosper reopened their website for lending ("investing") and borrowing
+                                                    after having obtained SEC registration for its loans ("notes"). After the relaunch,
+                                                    bidding on loans was restricted to residents of 28 U.S. states and the District of Columbia
+                                                    . Borrowers may reside in any of 47 states, with residents of three states (Iowa, Maine,
+                                                    and North Dakota) not permitted to borrow through Prosper”. <a href="https://en.wikipedia.org/wiki/Prosper_Marketplace">Source: Wikipedia</a>
+                                                    <br />
+                                                    <br />
+                                                    So that any analysis performed over time will show this gap in trading.
+                                                </p>
+                                                <hr>
+                                                <h4>Visualizations </h4>
+                                                <p class="innerText">
+                                                    This dataset is a window into the risk and return for Prosper loans.
+                                                    The aspects of this dataset that this visualization explains are:
+                                                    <ol class="innerList">
+                                                        <li>
+                                                            Loans By State, For Each Year and Loan Category
+                                                        </li>
+                                                        <li>
+                                                            Estimated Actual Loan Yield By Month, For Each Credit Rating
+                                                        </li>
+                                                    </ol>
+
+                                                </p>
+                                                <hr>
+                                                <h4>Visualization Instructions </h4>
+                                                <p class="innerText">
+                                                    To move between pages, click left or right on the controls: <img class="prosper1" src="img/controls.jpg"/>
+                                                </p>
+
+                                            </div>
+
+                                            <hr>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="myFooter">
+                                <div id="footerButton">
+
+                                </div>
+                                <div id="footerCopy">
+                                    &copy; Myles Callan 2016
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+                <!-- States Chart -->
+                <section>
+                    <div class="stretch">
+                        <iframe data-src="statesCategoriesFinal.html" height="100%" width="100%"></iframe>
+                    </div>
+                    <!-- Menu Out - States Chart Details-->
+                    <div>
+                        <div id="menuout1" class="menuout">
+                            <p class="myText">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;Details
+                            </p>
+                            <div class="menuout_inner">
+                                <div class="menuout_inner_text">
+                                    <p class="innerText">
+                                        <div id="intro">
+                                            <h3>Loans By State, For Each Year &amp; Loan Category</h3>
+                                            <p class="innerText">
+                                                Both the main and alternative visualizations are interactive displays for visualizing loan categories issued by
+                                                Prosper for each state for each year.
+                                                The categories (or purpose) for loans made were: Auto &amp; Home, Business, Debt, Medical & Personal, Other/NA,
+                                                Student &amp; Taxes.
+                                            </p>
+                                            <hr>
+                                            <p class="innerText">
+                                                <h4>Notable Features:</h4>
+                                                <ol class="innerList">
+                                                    <li>
+                                                        <strong>The rapid increase in loans facilitated, from &#36;64 million in 2007 to over &#36;360 million in 2013 (despite
+                                                        not offering services for a large part of 2009). The 2014 data is for a partial year, up to March 10th.</strong>
+                                                    </li>
+                                                    <li>
+                                                        <strong>The main category of loans facilitated by Prosper was for debt refinancing.</strong>
+                                                    </li>
+                                                    <li>
+                                                        <strong>The growth is broadly proportional across states.</strong>
+                                                    </li>
+                                                </ol>
+                                            </p>
+                                            <hr>
+                                            <p class="innerText">
+                                                <h4>Visualization Instructions (Main Visualization). </h4>
+                                                <ul class="innerList">
+                                                    <li>
+                                                        Click the buttons to change the axis.
+                                                        <br />
+                                                        The default, <em>Fixed axis</em>, better reflect loan patterns over time. Whereas <em>Variable axis</em>
+                                                        highlight the allocation of loans between categories.
+                                                    </li>
+                                                    <li>
+                                                        The size of the year menu buttons reflects the total loans for each year.
+                                                        <br />
+                                                        Clicking on a year will stop the animation and display the information for that year.
+                                                    </li>
+                                                    <li>
+                                                        Hovering over the bars show the details for each state.
+                                                    </li>
+                                                </ul>
+                                            </p>
+                                            <p class="innerText">
+                                                <h4>Visualization Instructions (Alternative Visualization). </h4>
+                                                <ul class="innerList">
+                                                    <li>
+                                                        Before you begin, select the units for the categories by clicking: Dollar Value or Count (you can change
+                                                        the units at any time, the change will not be noticeable until you make a new selection from the other options).
+                                                    </li>
+                                                    <li>
+                                                        Click the buttons to change the loan category: Debt, Business, Auto, or Other/NA.
+                                                    </li>
+                                                    <li>
+                                                        Drag or click the slider to change the year.
+                                                    </li>
+                                                    <li>
+                                                        Hover over the map to see details for each state.
+                                                    </li>
+                                                </ul>
+                                            </p>
+                                        </div>
+
+                                        <hr>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="myFooter">
+                            <div id="footerButton">
+
+                            </div>
+                            <div id="footerCopy">
+                                &copy; Myles Callan 2016
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Menu Out - States Alternative Chart-->
+                    <div>
+                        <div id="menuout10" class="menuout1">
+                            <p class="myText">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp;Alternative
+                                <br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Visualization
+                            </p>
+                            <div class="menuout_inner1">
+
+                                <iframe data-src="geoStatesCategoriesCombined.html" height="90% !important" width="100% !important"></iframe>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Yield Chart -->
+                <section>
+                    <div class="stretch">
+                        <iframe data-src="yieldMonthlyShaded.html" height="100%" width="100%"></iframe>
+                    </div>
+                    <!-- Menu Out - Yield Chart Details-->
+                    <div>
+                        <div id="menuout4" class="menuout">
+                            <p class="myText">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;Details
+                            </p>
+                            <div class="menuout_inner">
+                                <div class="menuout_inner_text">
+                                    <p class="innerText">
+                                        <div id="intro">
+                                            <h3>Estimated Actual Yield By Credit Rating, Monthly </h3>
+                                            <p class="innerText">
+                                                As we have seen, Prosper facilitated a total of &#36;949,894,300 in loans, mainly to refinance debt.
+                                                Each loan created has a stated Lender's Yield. In this section, the actual Lender's Yield is estimated.
+                                                <br />
+                                                <br />
+                                                Estimating the actual Lender's Yield implies using only loans that are not current - which totaled &#36;363,719,700.
+                                                As can be seen in the companion <em>Loan Status</em> visualization, this means that the estimated yield for more recent years is based
+                                                on a smaller and smaller proportion of loans (and so cannot be considered to be a true reflection of the yield for the
+                                                relevant portfolio of loans displayed for those years). This is the reason for the shaded region in the main visualization, which represents years
+                                                for which complete loans are less than 50&#37; of total loans. The <em>Loan Status</em> visualization also highlights that the
+                                                relative proportion of completed to defaulted loans closely tracks the estimated yield.
+                                                <br />
+                                                <br />
+                                                Customer payments, for loans that were not current, were &#36;335,204,900, which suggests a gross
+                                                (non-annualized) return of -7.84&#37; (or -3.97&#37; when recovery is included). Pre-2009, including recovery,
+                                                there was a gross return of -5.73&#37; (on &#36;178,560,500 of loans).
+                                                <br />
+                                            </p>
+                                            <hr>
+                                            <h4>Calculation of accumulated return (<em>r</em>) and annualized return (<em>r<sub>a</sub></em>). </h4>
+                                            <p class="innerText">
+                                                For each subset of data in the visualization, the annualized return  (<em>r<sub>a</sub></em>), is calculated as:
+                                                <div class="whiteBG">
+                                                    $$\begin{array}{rcl}
+                                                    r &=& {{\textrm{Customer Payments - Service Fees - Loan Amount}} \over \textrm{Loan Amount}}\\
+                                                    & \textrm{or, } & \textrm{ for defaulted/charged off loans}\\
+                                                    &=& {\textrm{Customer Payments - Service Fees - Collection Fees - Loan Amount + Non-principal Recovery + Principal Recovery} \over \textrm{Loan Amount}}\\
+                                                    r_{a} &=& \left( 1 + r \right)^{\frac{12}{\textrm{Actual Term}}}\\
+                                                    \end{array} $$
+                                                </div>
+                                            </p>
+                                            <hr>
+                                            <h4>Notable Features:</h4>
+                                            <p class="innerText">
+                                                <ol style="margin:0;padding:0;" class="innerList">
+                                                    <li>
+                                                        <strong>The pattern of yields for lower risk loans show no notable pattern over time.</strong>
+                                                    </li>
+                                                    <li>
+                                                        <strong>The pattern of yields for higher risk loans show a marked change when comparing the pre-2009 and post-2009
+                                                        periods. This suggests a change in buiness practices after having obtained SEC registration for its loans.</strong>
+                                                    </li>
+                                                </ol>
+                                            </p>
+                                            <hr>
+                                            <h4>Visualization Instructions. </h4>
+                                            <p class="innerText">
+                                                <ul class="innerList">
+                                                    <li>
+                                                        Click the buttons to change the axis.
+                                                        <br />
+                                                        Fixed axis better reflect the value of loans over time for each credit rating. Variable axis
+                                                        highlight the allocation of loans between different credit ratings.
+                                                    </li>
+                                                    <li>
+                                                        The size of the credit rating menu buttons reflect the total value of loans for
+                                                        each credit rating (for non-current loans).
+                                                        <br />
+                                                        Clicking on a year will stop the animation and display the information for that credit rating.
+                                                    </li>
+                                                    <li>
+                                                        Mouse over the bubbles to see details for each credit rating, including value and number of loans.
+                                                    </li>
+                                                </ul>
+                                            </p>
+                                        </div>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="myFooter">
+                            <div id="footerButton">
+
+                            </div>
+                            <div id="footerCopy">
+                                &copy; Myles Callan 2016
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Menu Out - Yield Alternative Chart-->
+                    <div>
+                        <div id="menuout10" class="menuout1">
+                            <p class="myText">
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp;Loan Status
+                                <br />
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Visualization
+                            </p>
+                            <div class="menuout_inner1">
+
+                                <iframe data-src="loanStatus.html" height="90%" width="100%"></iframe>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls : true,
+                progress : true,
+                history : true,
+                center : true,
+
+                transition : 'slide', // none/fade/slide/convex/concave/zoom
+
+                // Optional reveal.js plugins
+
+            });
+
+        </script>
+
+    </body>
+</html>
+
