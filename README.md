@@ -14,8 +14,10 @@ Explain any design choices you made including changes to the visualization after
 <li>The main issue that I faced was: How to reduce the dimensionality of a multi-dimensional dataset, where the story that I wanted to tell
  depended on many variables (and also categories within those variables).
 
-The first attempt at this aspect was not successful: Original Visualization
-http://www.mylescallan.com/udacity/analytics/ProjectSix/ProjectSix/index.html
+
+The first attempt at this aspect was not successful: 
+Original Visualization: http://www.mylescallan.com/udacity/analytics/ProjectSix/ProjectSix/index.html
+
 
 That original visualization focused too much on information and too little on the story. The evolution of the vizualization explains the decisions that I made:
 <ol>
@@ -68,7 +70,7 @@ _______________________________________________________
 
 Include all feedback you received from others on your visualization from the first sketch to the final visualization
 <ol>
-<li> Sheng_KungUdacity Coach3d
+<li> Sheng_KungUdacity Coach
 <ul>
 <li>The visualizations you've built are nice from a technical perspective, but I think more work needs to be done to better convey the story you want to tell. Many of the visualizations in the presentation lean too far in the exploration direction, so some additional guidance or focus is suggested to make them more explanatory in nature. You can allow readers the ability to explore your visualizations, but the first thing that you need to show your reader for each figure is the main point of why that visualization is useful to look at. Another thing that can help here is to use the text in your "Details" sidebar to explicitly note the main point of each visualization.
 
@@ -88,7 +90,6 @@ Include all feedback you received from others on your visualization from the fir
 
 <li>I don't really have any specific things to note about the fourth and fifth plots, but it is perhaps because I do not have a good idea of what the main story being told is. I think that the earlier suggestions for trying to focus the visualizations and to provide more directed commentary in the "Details" sidebox will be useful for helping the reader understand the significance of what is being plotted. This post is already getting long enough, so I think I'll just leave my commentary as it stands here.
 </ul>
-
 <li> sathya_67045301587081d
 My Feedback
 <ol>
