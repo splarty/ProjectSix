@@ -43,7 +43,10 @@ Changed units for charts (Yield chart begins with fixed axes, Loan Status added 
 3. Based on Comments from sathya_67045301587081d, I made the following changes:
 Added text to side column to explain that clicking on an item in that chart stops the chart and displays the selection.
 
-4. Submitted Visualization:
+4. Based on Comments from my wife:
+Used vh instead of height, to constrain the charts in different devices. Used CSS to format the text so that it is presented in 'chunks' that correspond to the information that it conveying about the charts.
+
+5. Submitted Visualization:
 http://www.mylescallan.com/udacity/analytics/ProjectSix/Github/index.html
 
 _______________________________________________________
@@ -77,6 +80,9 @@ My Feedback
 4) It will be great to add color to the category in legend, currently, it is only text, took some time to hover over the graph to get the details
 5) On the second visualization, y axis text is not visible
 
+3. My wife
+Depending on which device you use, the charts can go off the page.
+The text is not formatted and not presented in well-delineated blocks.
 
 _______________________________________________________
 
