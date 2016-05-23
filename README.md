@@ -69,6 +69,11 @@ _______________________________________________________
 ### Feedback 
 
 Include all feedback you received from others on your visualization from the first sketch to the final visualization
+<br>
+Link to Feedback: https://discussions.udacity.com/t/p6-request-for-feedback-on-data-visualization-project/169217
+<br>
+<br>
+
 <ol>
 <li> Sheng_Kung Udacity Coach
 <ul>
