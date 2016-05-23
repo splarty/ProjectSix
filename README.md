@@ -90,7 +90,9 @@ Include all feedback you received from others on your visualization from the fir
 
 <li>I don't really have any specific things to note about the fourth and fifth plots, but it is perhaps because I do not have a good idea of what the main story being told is. I think that the earlier suggestions for trying to focus the visualizations and to provide more directed commentary in the "Details" sidebox will be useful for helping the reader understand the significance of what is being plotted. This post is already getting long enough, so I think I'll just leave my commentary as it stands here.
 </ul>
+<br>
 <li> sathya_67045301587081d Udacity Peer
+<br>
 My Feedback
 <ol>
 <li> Overall nice animation depicting the loans over the years for various states
@@ -114,7 +116,7 @@ List any sources you consulted to create your visualization
 
 The overall presentation uses: http://lab.hakim.se/reveal-js/#/ (Reveal). This allows a storyboard effect for the charts in the visualization.
 <ol>
-<li>. The 2 main visualizations were based on the dimple storyboard visualization: http://dimplejs.org/advanced_examples_viewer.html?id=advanced_storyboard_control
+<li> The 2 main visualizations were based on the dimple storyboard visualization: http://dimplejs.org/advanced_examples_viewer.html?id=advanced_storyboard_control
 <li> The alternative (geographical) visualization was based: https://github.com/CSE512-15S/a3-aljadaan-rlordon-olsufj Weather in the USA Ross Lordon, Jacob Olsufka, Ahmad Aljadaan
 <li> The companion visualization for the second graphic was based on: http://dimplejs.org/examples_viewer.html?id=bars_vertical_stacked_100pct
 </ol>
