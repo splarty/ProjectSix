@@ -508,7 +508,7 @@
             add_properties = {
                 column : null,
                 domain : null,
-                format : d3.format(',.02f'),
+                format : d3.format(',.0f'),
                 legend : false,
                 colors : colorbrewer.OrRd[9]
             };
