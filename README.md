@@ -36,7 +36,7 @@ That original visualization focused too much on information and too little on th
     <li> color: aggregated bar chart (over loan status)
     <li> position: for each year
     <li> content: I changed this, for the submitted version, to reflect both percentage and dollar value (again, as the result of a comment from Sheng_Kung)
-      <ul>
+      </ul>
   <li> The fourth chart captures information about the yield for each loan. This was the most complicated information to display in my visualization:
         <ul>
         <li> animation: over credit rating
