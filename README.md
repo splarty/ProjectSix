@@ -9,6 +9,31 @@ _______________________________________________________
 
 ### Design
 
+#### Updated
+
+To make life easier for the reviewer, only the first chart "Loans By State, For Each Year and & Loan Category" is submitted for review.
+
+I updated this first chart, per the initial reviewer's comments to:
+<ol>
+<li> Remove data for 2014 (as it was a partial year)  Which addresses: <br>
+"As others mentioned in the feedback, including the 2014 data is tricky. Even if there is a written explanation that the 2014 data is incomplete, 
+it still might be better to leave it off; some people aren't going to read carefully and will think 2014 was a bad year."
+<li> Add comment about sidebars size and its relation to the data  Which addresses: <br>
+"Even though the year legend has a chart, many people might not realize really what those bars are representing 
+especially because it's not mentioned on the chart."
+</ol>
+
+Issues that I need explained from the initial reviewers comments:
+<ol>
+<li> "The question I have is if that finding is encoded in the most intuitive way? 
+The most important encodings on a chart are generally on the x and y axis because people will see length before other encodings" <br>
+I agree with this comment, however I think that the evolution of the market for Prosper loans is amply displayed using animation over years (that is,
+I think that the animation is a suitable subsitute for directly visualizing this aspect using x,y axes).
+<li> "If the pattern is exactly the same across states, then showing all of the states probably isn't needed."<br>
+As that is one of the findings that I thought most interesting, and wanted to display, I don't understand this comment.
+</ol>
+
+#### Original
 Explain any design choices you made including changes to the visualization after collecting feedback
 <ol>
 <li>The main issue that I faced was: How to reduce the dimensionality of a multi-dimensional dataset, where the story that I wanted to tell
