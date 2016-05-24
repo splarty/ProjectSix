@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <script src="http://d3js.org/d3.v3.min.js"></script><script src="http://dimplejs.org/dist/dimple.v2.1.2.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+        <style type="text/css">
+            h1 {
+                text-align: center;
+            }
+            #chartContainer {
+                margin: auto;
+                width: 90vw;
+                height: 90vh;
+            }
+            .button1 {
+                background: transparent;
+                display: inline-block;
+                margin: 0px 15px 0px 15px;
+                border: solid 2px black;
+                /*border-radius: 10px;*/
+                width: 105px;
+                text-align: center;
+                padding: 5px;
+            }
+            .button1:focus {
+                outline: 0;
+            }
+            .buttonShadow {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            }
+
+            .buttonShadow:hover {
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+        </style>
+        <title>Defaults</title>
+    </head>
+    <body>
+
+        <h1 align="center">Prosper Loans: Loan Status By Year</h1>
+        <div class="centerIsh" style="text-align:center;">
+            <button id='btn' class="buttonShadow button1">
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                Dollar Value
+            </button>
+            <button id='btn1' class="buttonShadow button1">
+                <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                Percentage
+            </button>
+        </div>
+        <div id='chartContainer'  style="height: 80vh;width: 80vw"></div>
+
+        <script type="text/javascript">
+            //creates the chart container
+
+            var svg = dimple.newSvg("#chartContainer", "100%", "100%");
+            d3.csv("vizData/tableDefaultTotal2013.csv", function(data) {
+
+                //This creates a new dimple chart by combing data with the chart
+                var myChart1 = new dimple.chart(svg, data);
+                myChart1.setMargins("12%", "10%", "15%", "23%");
+                //Add category bars to bar chart
+                var x = myChart1.addCategoryAxis("x", "Year");
+                x.addOrderRule("Year", false);
+                //adds the 'measure' for the bar chart
+                var y = myChart1.addMeasureAxis("y", 'Percentage Value');
+                y.overrideMax = 100;
+                var z = myChart1.addMeasureAxis("z", 'Count');
+                //This creates and identifies it has a bar chart (extra grouping, what chart)
+                var series = myChart1.addSeries('Loan Status', dimple.plot.bar);
+
+                var myLegend = myChart1.addLegend("-9%", "9%", "10%", "70%", [series]);
+
+                myChart1.assignColor("Completed", "#377eb8");
+                myChart1.assignColor("Cancelled", "black");
+                myChart1.assignColor("Current", "#e41a1c");
+                myChart1.assignColor("Defaulted/Charged Off", "#ffff33");
+                myChart1.assignColor("Past Due < 120 Days", "#4daf4a");
+                myChart1.assignColor("Past Due > 120 Days", "#984ea3");
+                myChart1.assignColor("Final Payment", "#ff7f00");
+
+                myChart1.draw();
+
+                myChart1.axes[0].shapes.call(d3.svg.axis().orient("bottom").scale(myChart1.axes[0]._scale)).selectAll("text").style("text-anchor", "end").attr("dx", "0.5em").attr("dy", "2.5em").attr("transform", "rotate(-70)")
+
+                d3.select("#btn").on("click", function() {
+                    svg.selectAll("*").remove();
+
+                    //This creates a new dimple chart by combing data with the chart
+                    var myChart1 = new dimple.chart(svg, data);
+                    myChart1.setMargins("12%", "10%", "15%", "23%");
+                    //Add category bars to bar chart
+                    var x = myChart1.addCategoryAxis("x", "Year");
+                    x.addOrderRule("Year", false);
+                    //adds the 'measure' for the bar chart
+                    var y = myChart1.addMeasureAxis("y", 'Value');
+                    var z = myChart1.addMeasureAxis("z", 'Count');
+                    //This creates and identifies it has a bar chart (extra grouping, what chart)
+                    var series = myChart1.addSeries('Loan Status', dimple.plot.bar);
+
+                    var myLegend = myChart1.addLegend("-9%", "9%", "10%", "70%", [series]);
+
+                    myChart1.assignColor("Completed", "#377eb8");
+                    myChart1.assignColor("Cancelled", "black");
+                    myChart1.assignColor("Current", "#e41a1c");
+                    myChart1.assignColor("Defaulted/Charged Off", "#ffff33");
+                    myChart1.assignColor("Past Due < 120 Days", "#4daf4a");
+                    myChart1.assignColor("Past Due > 120 Days", "#984ea3");
+                    myChart1.assignColor("Final Payment", "#ff7f00");
+
+                    myChart1.draw();
+
+                    myChart1.axes[0].shapes.call(d3.svg.axis().orient("bottom").scale(myChart1.axes[0]._scale)).selectAll("text").style("text-anchor", "end").attr("dx", "0.5em").attr("dy", "2.5em").attr("transform", "rotate(-70)")
+
+                    myChart1.draw(800);
+                });
+                d3.select("#btn1").on("click", function() {
+                    svg.selectAll("*").remove();
+
+                    //This creates a new dimple chart by combing data with the chart
+                    var myChart1 = new dimple.chart(svg, data);
+                    myChart1.setMargins("12%", "10%", "15%", "23%");
+                    //Add category bars to bar chart
+                    var x = myChart1.addCategoryAxis("x", "Year");
+                    x.addOrderRule("Year", false);
+                    //adds the 'measure' for the bar chart
+                    var y = myChart1.addMeasureAxis("y", 'Percentage Value');
+                    y.overrideMax = 100;
+                    var z = myChart1.addMeasureAxis("z", 'Count');
+                    //This creates and identifies it has a bar chart (extra grouping, what chart)
+                    var series = myChart1.addSeries('Loan Status', dimple.plot.bar);
+
+                    var myLegend = myChart1.addLegend("-9%", "9%", "10%", "70%", [series]);
+
+                    myChart1.assignColor("Completed", "#377eb8");
+                    myChart1.assignColor("Cancelled", "black");
+                    myChart1.assignColor("Current", "#e41a1c");
+                    myChart1.assignColor("Defaulted/Charged Off", "#ffff33");
+                    myChart1.assignColor("Past Due < 120 Days", "#4daf4a");
+                    myChart1.assignColor("Past Due > 120 Days", "#984ea3");
+                    myChart1.assignColor("Final Payment", "#ff7f00");
+
+                    myChart1.draw();
+
+                    myChart1.axes[0].shapes.call(d3.svg.axis().orient("bottom").scale(myChart1.axes[0]._scale)).selectAll("text").style("text-anchor", "end").attr("dx", "0.5em").attr("dy", "2.5em").attr("transform", "rotate(-70)")
+
+                    myChart1.draw(800);
+                });
+            });
+        </script>
+    </body>
+</html>
